@@ -1,2 +1,8 @@
-while read -r i; do exa -l "$@" -d "$i"; done
+#!/usr/bin/env bash
+dirs=()
+while read -r i; do
+  dirs+=("-d");
+  dirs+=("$i");
+done
 
+exa -l "$@" ${dirs[@]}
